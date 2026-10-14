@@ -1,1 +1,44 @@
-<img src="https://i.giphy.com/1l307VjEIRFp2t4eJB.webp" alt="Animated graduation GIF" style="width: 100vw; height: 100vh; object-fit: contain;">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GIF Viewer</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: #000;
+      overflow: hidden;
+      cursor: pointer;
+    }
+    img {
+      width: 100vw;
+      height: 100vh;
+      object-fit: contain;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <img id="gif" src="https://i.giphy.com/1l307VjEIRFp2t4eJB.webp" alt="Animated GIF" onclick="changeImage()">
+
+  <script>
+    const images = [
+      'https://i.giphy.com/1l307VjEIRFp2t4eJB.webp',
+      'https://media.giphy.com/media/S43RIQ4OtWGKMTyU8q/giphy.gif',
+      'https://i.giphy.com/Ze6OmgA0foBv8GuAxm.webp'
+    ];
+    let currentIndex = 0;
+
+    function changeImage() {
+      currentIndex = (currentIndex + 1) % images.length;
+      document.getElementById('gif').src = images[currentIndex];
+    }
+  </script>
+
+</body>
+</html>
